@@ -33,5 +33,5 @@ jobs:
     - name: Upload Output Preprocessing Dataset
       uses: actions/upload-artifact@v4
       with:
-        name: processed-dataset
+        name: data-balita-processed-dataset
         path: preprocessing/data_balita_preprocessing/
