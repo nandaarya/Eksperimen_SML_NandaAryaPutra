@@ -1,0 +1,37 @@
+name: Automation Preprocessing Dataset
+
+on:
+  push:
+    paths:
+      - "preprocessing/automate_nandaaryaputra.py"
+      - "data_balita_raw.csv"
+      - ".github/workflows"
+  workflow_dispatch:
+
+jobs:
+  preprocessing:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+      
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas scikit-learn mlflow==2.19.0
+
+    - name: Run Preprocessing Script
+      run: |
+        python preprocessing/automate_nandaaryaputra.py
+
+    - name: Upload Output Preprocessing Dataset
+      uses: actions/upload-artifact@v4
+      with:
+        name: processed-dataset
+        path: preprocessing/data_balita_preprocessing/
