@@ -5,7 +5,7 @@ on:
     paths:
       - "preprocessing/automate_nandaaryaputra.py"
       - "data_balita_raw.csv"
-      - ".github/workflows"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 jobs:
