@@ -72,8 +72,8 @@ def preprocessing_data(input_file,output_dir):
     
     #Data Split
     # Pisahkan fitur (X) dan target (y)
-    X = df.drop(columns=["Status Gizi"])  # Semua kolom kecuali target
-    y = df["Status Gizi"]                 # Hanya kolom target
+    X = df_encoded.drop(columns=["Status Gizi"])  # Semua kolom kecuali target
+    y = df_encoded["Status Gizi"]                 # Hanya kolom target
     # Bagi data latih dan uji
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
@@ -88,7 +88,7 @@ def preprocessing_data(input_file,output_dir):
     print("Data preprocessing berhasil disimpan")
     
     return {
-        "rows_clean": df.shape[0],
+        "rows_clean": df_encoded.shape[0],
         "files": [
             os.path.join(output_dir, "X_train.csv"),
             os.path.join(output_dir, "X_test.csv"),
