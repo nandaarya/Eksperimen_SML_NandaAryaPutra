@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import mlflow
+import joblib
 
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -38,6 +39,8 @@ def preprocessing_data(input_file,output_dir):
     # Inisialisasi dan transformasi
     scaler = MinMaxScaler()
     df.loc[:, num_features] = scaler.fit_transform(df[num_features])
+    # Simpan scaler
+    joblib.dump(scaler, "scaler.pkl")
     
     # Mendeteksi Outlier
     # Menghitung dan menampilkan jumlah outlier per fitur numerik

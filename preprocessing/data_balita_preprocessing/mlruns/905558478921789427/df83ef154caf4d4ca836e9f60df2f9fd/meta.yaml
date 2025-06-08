@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/Project/Machine Learning/SMSML_NandaAryaPutra/Eksperimen_SML_NandaAryaPutra/preprocessing/data_balita_preprocessing/mlruns/905558478921789427/df83ef154caf4d4ca836e9f60df2f9fd/artifacts
+end_time: 1749410449662
+entry_point_name: ''
+experiment_id: '905558478921789427'
+lifecycle_stage: active
+run_id: df83ef154caf4d4ca836e9f60df2f9fd
+run_name: Preprocessing_Run
+run_uuid: df83ef154caf4d4ca836e9f60df2f9fd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749410449509
+status: 4
+tags: []
+user_id: HP
